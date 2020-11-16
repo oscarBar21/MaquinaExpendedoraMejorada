@@ -1,4 +1,4 @@
-public class MaquinaExpendedoraMejorada {
+;public class MaquinaExpendedoraMejorada {
     
     // El precio del billete
     private int precioBillete;
@@ -54,6 +54,8 @@ public class MaquinaExpendedoraMejorada {
      * Imprime un billete para el cliente actual
      */
     public void imprimirBillete() {
+        int cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
+        
         if (balanceClienteActual >= precioBillete) {        
             // Simula la impresion de un billete
             System.out.println("##################");
@@ -69,11 +71,11 @@ public class MaquinaExpendedoraMejorada {
             balanceClienteActual = balanceClienteActual - precioBillete;
         }
         else {
-            System.out.println("Necesitas introducir " + (precioBillete - balanceClienteActual) + " euros mas!");
-                    
+            System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
+                 
         }            
     }
-    
+             
     /**
      * Cancela la operacion de compra del cliente actual y le
      * devuelve al cliente el dinero que ha introducido hasta el momento
