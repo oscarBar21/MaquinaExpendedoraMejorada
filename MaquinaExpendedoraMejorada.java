@@ -49,12 +49,14 @@
             System.out.println(cantidadIntroducida + " no es una cantidad de dinero valida.");
         }        
     }
+    
+    
 
     /**
      * Imprime un billete para el cliente actual
      */
     public void imprimirBillete() {
-        int cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
+       int cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
         
         if (cantidadDeDineroQueFalta <= 0) {        
             // Simula la impresion de un billete
@@ -86,4 +88,12 @@
         balanceClienteActual = 0;
         return cantidadDeDineroADevolver;
     } 
+    
+    public int vaciarDineroDeLaMaquina(){
+        int cantidadTotalDeDineroEliminado = balanceClienteActual + totalDineroAcumulado;
+        balanceClienteActual = 0;
+        totalDineroAcumulado = 0;
+        
+        return cantidadTotalDeDineroEliminado;
+    }
 }
