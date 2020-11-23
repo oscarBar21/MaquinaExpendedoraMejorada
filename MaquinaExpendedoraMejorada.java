@@ -96,9 +96,9 @@ public class MaquinaExpendedoraMejorada {
            cantidadTotalDeDineroEliminado = -1;
        }
        else{
+           cantidadTotalDeDineroEliminado = totalDineroAcumulado;
            balanceClienteActual = 0;
            totalDineroAcumulado = 0;
-           cantidadTotalDeDineroEliminado = balanceClienteActual + totalDineroAcumulado;
        }
        return cantidadTotalDeDineroEliminado;
     }
