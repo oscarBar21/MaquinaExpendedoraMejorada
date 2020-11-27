@@ -13,7 +13,7 @@ public class MaquinaExpendedoraMejorada {
     // contador de billetes vendidos
     private int contadorBilletes;
 
-    /**
+     /**
      * Crea una maquina expendedora de billetes de tren con el 
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
@@ -24,6 +24,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
+        contadorBilletes = 0;
     }
 
     /**
@@ -52,8 +53,6 @@ public class MaquinaExpendedoraMejorada {
         }        
     }
     
-    
-
     /**
      * Imprime un billete para el cliente actual
      */
