@@ -12,19 +12,22 @@ public class MaquinaExpendedoraMejorada {
     private String estacionDestino;
     // contador de billetes vendidos
     private int contadorBilletes;
+    // tipo de maquina
+    private boolean tipoMaquina;
 
      /**
      * Crea una maquina expendedora de billetes de tren con el 
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
-    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino) {
+    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino, boolean tipoDeMaquina) {
         precioBillete = precioDelBillete;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
         contadorBilletes = 0;
+        tipoMaquina = tipoDeMaquina;
     }
 
     /**
@@ -58,8 +61,32 @@ public class MaquinaExpendedoraMejorada {
      */
     public void imprimirBillete() {
        int cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
-       
-       if (cantidadDeDineroQueFalta <= 0) {        
+       double descuentoBillete = 20 / 100;
+      if(tipoMaquina == true){
+          if (cantidadDeDineroQueFalta <= 0) {        
+            // Simula la impresion de un billete
+            System.out.println("##################");
+            System.out.println("# Billete de tren:");
+            System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
+            System.out.println("# " + precioBillete + " euros.");
+            System.out.println("##################");
+            System.out.println();  
+            System.out.println("tiene un descuento del " + (descuentoBillete) + "respecto al precio del billete");
+    
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
+            balanceClienteActual = balanceClienteActual - precioBillete;
+            // cuenta los billetes vendidos
+            contadorBilletes = contadorBilletes + 1;
+         }
+          else {
+            System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
+                    
+         }
+      }
+      else{
+          if (cantidadDeDineroQueFalta <= 0) {        
             // Simula la impresion de un billete
             System.out.println("##################");
             System.out.println("# Billete de tren:");
@@ -74,11 +101,12 @@ public class MaquinaExpendedoraMejorada {
             balanceClienteActual = balanceClienteActual - precioBillete;
             // cuenta los billetes vendidos
             contadorBilletes = contadorBilletes + 1;
-       }
-       else {
+          }
+          else {
             System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
                     
-       }
+          } 
+      }
     }
              
     /**
