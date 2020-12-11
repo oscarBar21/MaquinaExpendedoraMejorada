@@ -73,15 +73,13 @@ public class MaquinaExpendedoraMejorada {
             if(tipoMaquina == true){
                 System.out.println("tiene un descuento del" + (descuentoBillete) + "respecto al precio del billete");
             }
-            else{
-                // Actualiza el total de dinero acumulado en la maquina
-                totalDineroAcumulado = totalDineroAcumulado + precioBillete;
-                // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
-                balanceClienteActual = balanceClienteActual - precioBillete;
-                // cuenta los billetes vendidos
-                contadorBilletes = contadorBilletes + 1;
-                
-            }
+
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
+            balanceClienteActual = balanceClienteActual - precioBillete;
+            // cuenta los billetes vendidos
+            contadorBilletes = contadorBilletes + 1;
        }
        else {
             System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
