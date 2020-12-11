@@ -80,7 +80,7 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println("# " + precioBillete + " euros.");
                 System.out.println("##################");
                 System.out.println(); 
-                if(tipoMaquina == true){
+                if(tipoMaquina == true && contadorBilletes == 2){
                     System.out.println("tiene un descuento del" + (descuentoBillete) + "respecto al precio del billete");
                 }
     
